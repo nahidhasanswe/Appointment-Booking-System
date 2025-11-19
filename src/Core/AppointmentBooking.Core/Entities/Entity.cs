@@ -28,8 +28,8 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>
 {
 	public TId Id { get; protected set; }
 
-	private List<IDomainEvent> _domainEvents;
-	public IReadOnlyCollection<IDomainEvent>? DomainEvents => _domainEvents?.AsReadOnly();
+	private List<IDomainEvent> _domainEvents = new();
+	public virtual IReadOnlyCollection<IDomainEvent>? DomainEvents => _domainEvents?.AsReadOnly();
 
 	private Entity()
 	{
@@ -50,16 +50,15 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>
 	/// </summary>
 	protected void AddDomainEvent(IDomainEvent domainEvent)
 	{
-		_domainEvents ??= new List<IDomainEvent>();
 		_domainEvents.Add(domainEvent);
 	}
 
 	/// <summary>
 	/// Clears all domain events
 	/// </summary>
-	public void ClearDomainEvents()
+	public virtual void ClearDomainEvents()
 	{
-		_domainEvents?.Clear();
+		_domainEvents.Clear();
 	}
 
 	/// <summary>
@@ -85,7 +84,7 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>
 		return (GetType().ToString() + Id).GetHashCode();
 	}
 
-	public static bool operator ==(Entity<TId> a, Entity<TId> b)
+	public static bool operator ==(Entity<TId>? a, Entity<TId>? b)
 	{
 		if (a is null && b is null) return true;
 		if (a is null || b is null) return false;

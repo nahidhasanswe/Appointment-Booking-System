@@ -3,24 +3,18 @@ using AppointmentBooking.Core.Events;
 
 namespace AppointmentBooking.Core.Aggregates;
 
-public abstract class AggregateRoot<TKey> : Entity<TKey>
+public abstract class AggregateRoot<TKey>(TKey id) : Entity<TKey>(id), IAggregateRoot
 {
     private readonly List<IDomainEvent> _domainEvents = new();
 
-    protected AggregateRoot(TKey id) : base(id)
-    {
-    }
+    public override IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
-    protected IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
-    
-    
-
-    protected void AddDomainEvent(IDomainEvent domainEvent)
+    public new void AddDomainEvent(IDomainEvent domainEvent)
     {
         _domainEvents.Add(domainEvent);
     }
 
-    protected void ClearDomainEvents()
+    public override void ClearDomainEvents()
     {
         _domainEvents.Clear();
     }

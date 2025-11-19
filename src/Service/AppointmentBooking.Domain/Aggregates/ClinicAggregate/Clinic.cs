@@ -1,6 +1,7 @@
 using AppointmentBooking.Core;
 using AppointmentBooking.Core.Aggregates;
 using AppointmentBooking.Domain.Aggregates.DoctorAggregate;
+using AppointmentBooking.Domain.Events;
 using AppointmentBooking.Domain.ValueObjects;
 
 namespace AppointmentBooking.Domain.Aggregates.ClinicAggregate;
@@ -28,6 +29,8 @@ public class Clinic : AggregateRoot
         ContactInfo = contactInfo ?? throw new ArgumentNullException(nameof(contactInfo));
         IsActive = true;
         UpdatedAt = DateTime.UtcNow;
+        
+        this.AddDomainEvent(new NewClinicRegistrationEvent(Id));
     }
 
     public Result UpdateInfo(string name, Address address, ContactInfo contactInfo)

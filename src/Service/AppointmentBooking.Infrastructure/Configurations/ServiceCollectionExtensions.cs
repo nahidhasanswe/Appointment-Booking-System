@@ -22,7 +22,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddDbContextPool<BookingDbContext>(dbOptionsBuilder);
         services.AddScoped<IDbContextProvider<BookingDbContext>, DefaultDbContextProvider<BookingDbContext>>();
-        services.AddScoped<IUnitOfWorkManager, EFCoreUnitOfWorkManager<BookingDbContext>>();
+        services.AddScoped<IUnitOfWorkManager, EfCoreUnitOfWorkManager<BookingDbContext>>();
 
 
         services.AddScoped<IDoctorRepository, DoctorRepository>();
