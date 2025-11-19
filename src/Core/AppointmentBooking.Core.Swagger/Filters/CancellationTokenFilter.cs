@@ -1,4 +1,4 @@
-namespace AppointmentBooking.Api.Swagger;
+namespace AppointmentBooking.Core.Swagger.Filters;
 
 /// <summary>
 /// A dedicated operation filter to remove the CancellationToken parameter 

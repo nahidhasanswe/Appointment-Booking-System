@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Api", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Api.Tests", "tests\AppointmentBooking.Api.Tests\AppointmentBooking.Api.Tests.csproj", "{8D6916E8-5189-43EF-AA00-B7E04853F4DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Swagger", "src\Core\AppointmentBooking.Core.Swagger\AppointmentBooking.Core.Swagger.csproj", "{951E9B4E-A65C-458D-84D1-2A9FB73A1872}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{8D6916E8-5189-43EF-AA00-B7E04853F4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D6916E8-5189-43EF-AA00-B7E04853F4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D6916E8-5189-43EF-AA00-B7E04853F4DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951E9B4E-A65C-458D-84D1-2A9FB73A1872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951E9B4E-A65C-458D-84D1-2A9FB73A1872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951E9B4E-A65C-458D-84D1-2A9FB73A1872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951E9B4E-A65C-458D-84D1-2A9FB73A1872}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DF03D3F7-5068-42A9-8FDF-9B9015A52C9E} = {9A75FCFA-6DC1-4DF3-8168-48CC073E2765}
@@ -81,5 +87,6 @@ Global
 		{D1ECB66D-B5D9-47D8-8093-2874F42FB7AA} = {EA4A61B1-53C9-4D6E-A2A3-D7742BE5EE09}
 		{7C0BE202-1750-4AFB-A5ED-928370602E9F} = {EA4A61B1-53C9-4D6E-A2A3-D7742BE5EE09}
 		{8D6916E8-5189-43EF-AA00-B7E04853F4DF} = {47CB401A-FD83-48B0-9408-985F9ACA7163}
+		{951E9B4E-A65C-458D-84D1-2A9FB73A1872} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
 	EndGlobalSection
 EndGlobal

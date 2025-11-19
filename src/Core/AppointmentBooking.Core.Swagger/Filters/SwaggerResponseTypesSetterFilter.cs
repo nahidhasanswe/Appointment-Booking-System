@@ -1,9 +1,10 @@
 using System.Reflection;
+using AppointmentBooking.Core.Swagger.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace AppointmentBooking.Api.Swagger;
+namespace AppointmentBooking.Core.Swagger.Filters;
 
 public class SwaggerResponseTypesSetterFilter: IOperationFilter
 {

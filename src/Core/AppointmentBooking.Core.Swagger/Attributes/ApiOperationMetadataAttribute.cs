@@ -1,7 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AppointmentBooking.Api.Swagger;
+namespace AppointmentBooking.Core.Swagger.Attributes;
 
 /// <summary>
 /// Abstract base attribute used to store the response and request Type metadata.

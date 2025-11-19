@@ -1,5 +1,5 @@
 using AppointmentBooking.Api.Examples.Patient;
-using AppointmentBooking.Api.Swagger;
+using AppointmentBooking.Core.Swagger.Attributes;
 using AppointmentBooking.Application.DTOs;
 using AppointmentBooking.Core.Mapping;
 using AppointmentBooking.Core.Web.Controller;

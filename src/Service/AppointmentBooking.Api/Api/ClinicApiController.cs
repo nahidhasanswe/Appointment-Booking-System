@@ -1,5 +1,5 @@
 using AppointmentBooking.Api.Examples.Clinic;
-using AppointmentBooking.Api.Swagger;
+using AppointmentBooking.Core.Swagger.Attributes;
 using AppointmentBooking.Application.DTOs;
 using AppointmentBooking.Application.Features.Clinics.Commands.CreateClinic;
 using AppointmentBooking.Application.Features.Clinics.Commands.UpdateClinic;

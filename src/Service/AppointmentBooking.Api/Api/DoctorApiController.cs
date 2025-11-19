@@ -1,19 +1,13 @@
 using AppointmentBooking.Api.Examples.Doctor;
-using AppointmentBooking.Api.Swagger;
+using AppointmentBooking.Core.Swagger.Attributes;
 using AppointmentBooking.Application.DTOs;
 using AppointmentBooking.Application.Features.Doctors.Commands.CreateDoctor;
 using AppointmentBooking.Application.Features.Doctors.Commands.UpdateDoctor;
-using AppointmentBooking.Application.Features.Doctors.Queries;
 using AppointmentBooking.Core.Mapping;
 using AppointmentBooking.Core.Web.Controller;
 using AppointmentBooking.Core.Web.Response;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using AppointmentBooking.Application.Features.Doctors.Queries.Doctor;
 
 namespace AppointmentBooking.Api.Api;

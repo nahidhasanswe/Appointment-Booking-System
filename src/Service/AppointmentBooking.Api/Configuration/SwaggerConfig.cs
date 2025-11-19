@@ -1,15 +1,15 @@
 using System.Reflection;
-using AppointmentBooking.Api.Swagger;
+using AppointmentBooking.Core.Swagger.Configuration;
+using AppointmentBooking.Core.Web.Response;
 using Microsoft.OpenApi.Models;
 
 namespace AppointmentBooking.Api.Configuration;
 
 public static class SwaggerConfig
 {
-    public static IServiceCollection AddSwagger(this IServiceCollection services)
+    public static IServiceCollection AddSwaggerConfig(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen(cfg =>
+        services.AddSwagger(cfg =>
         {
             cfg.SwaggerDoc("v1", new OpenApiInfo
             {
@@ -21,16 +21,8 @@ public static class SwaggerConfig
             var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
             cfg.IncludeXmlComments(xmlPath);
-            
-            
-            cfg.OperationFilter<CancellationTokenFilter>();
-            
-            cfg.OperationFilter<SwaggerTypeSetterFilter>();
-            
-            cfg.OperationFilter<SwaggerResponseTypesSetterFilter>();
-            
-        });
-
+        }, typeof(ApiResponse<>));
+        
         return services;
     }
 }

@@ -12,13 +12,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.6" />
-        <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="9.0.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.6" />
-        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <ProjectReference Include="..\..\Core\AppointmentBooking.Core.Swagger\AppointmentBooking.Core.Swagger.csproj" />
       <ProjectReference Include="..\..\Core\AppointmentBooking.Core.Web\AppointmentBooking.Core.Web.csproj" />
       <ProjectReference Include="..\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
     </ItemGroup>
@@ -29,5 +23,6 @@
       <Folder Include="Examples\Patient\" />
       <Folder Include="Examples\TimeSlot\" />
     </ItemGroup>
+
 
 </Project>

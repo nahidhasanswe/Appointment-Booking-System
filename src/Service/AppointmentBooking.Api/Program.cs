@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
 builder.Services.AddControllers();
-builder.Services.AddSwagger();
+builder.Services.AddSwaggerConfig(configuration);
 
 builder.Services.AddIoC(configuration);
 builder.Services.AddObjectMapper(configuration["AutoMapper:LicenseKey"].ToString(), typeof(MappingProfile).Assembly);

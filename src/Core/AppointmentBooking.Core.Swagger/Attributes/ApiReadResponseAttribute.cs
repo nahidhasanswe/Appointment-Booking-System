@@ -1,4 +1,4 @@
-namespace AppointmentBooking.Api.Swagger;
+namespace AppointmentBooking.Core.Swagger.Attributes;
 
 /// <summary>
 /// Single attribute for READ operations (e.g., GET).
