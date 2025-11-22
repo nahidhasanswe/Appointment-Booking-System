@@ -2,6 +2,7 @@ using System.Linq.Expressions;
 
 namespace AppointmentBooking.Core.Specifications;
 
+
 /// <summary>
 /// Base class for specifications
 /// </summary>
@@ -81,5 +82,17 @@ public abstract class Specification<T> : ISpecification<T>
     protected void ApplyNoTracking()
     {
         AsNoTracking = true;
+    }
+}
+
+public abstract class Specification<T, TResult> : Specification<T>, ISpecification<T, TResult>
+    where TResult : class
+{
+    public Expression<Func<T, TResult>> Selector { get; private set;  }
+
+
+    protected void AddSelector(Expression<Func<T, TResult>> selector)
+    {
+        Selector = selector;
     }
 }

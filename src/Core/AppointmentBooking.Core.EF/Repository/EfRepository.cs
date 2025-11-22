@@ -27,7 +27,15 @@ public abstract class EfRepository<TContext, T, TKey>(IDbContextProvider<TContex
         
         return new PagedList<T>(result, count);
     }
-    
+
+    public async Task<IPagedList<TResult>> GetPaginationListAsync<TResult>(Specification<T, TResult> specification, CancellationToken cancellationToken = default) where TResult : class
+    {
+        var result = await ApplySpecification(specification).ToListAsync(cancellationToken);
+        var count = await CountAlAsync(specification, cancellationToken);
+        
+        return new PagedList<TResult>(result, count);
+    }
+
     public ValueTask<T?> GetByIdAsync(TKey id, CancellationToken cancellationToken = default)
     {
         return Table.FindAsync(id, cancellationToken);
@@ -38,12 +46,23 @@ public abstract class EfRepository<TContext, T, TKey>(IDbContextProvider<TContex
         return ApplySpecification(spec).FirstOrDefaultAsync(cancellationToken);
     }
 
+    public Task<TResult?> FirstOrDefaultAsync<TResult>(ISpecification<T, TResult> spec, CancellationToken cancellationToken = default)
+        where TResult : class
+    {
+        return ApplySpecification<TResult>(spec).FirstOrDefaultAsync(cancellationToken);
+    }
+
     public async Task<IReadOnlyList<T>> ListAllAsync(CancellationToken cancellationToken = default)
     {
         return (await Table.AsNoTracking().ToListAsync(cancellationToken)).AsReadOnly();
     }
 
     public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec, CancellationToken cancellationToken = default)
+    {
+        return (await ApplySpecification(spec).AsNoTracking().ToListAsync(cancellationToken)).AsReadOnly();
+    }
+
+    public async Task<IReadOnlyList<TResult>> ListAsync<TResult>(ISpecification<T, TResult> spec, CancellationToken cancellationToken = default) where TResult : class
     {
         return (await ApplySpecification(spec).AsNoTracking().ToListAsync(cancellationToken)).AsReadOnly();
     }
@@ -113,6 +132,12 @@ public abstract class EfRepository<TContext, T, TKey>(IDbContextProvider<TContex
         return SpecificationEvaluator<T, TKey>.GetQuery(Table.AsQueryable(), spec);
     }
     
+    
+    private IQueryable<TResult> ApplySpecification<TResult>(ISpecification<T, TResult> spec)
+        where TResult : class
+    {
+        return SpecificationEvaluator<T, TKey>.GetResultQuery(Table.AsQueryable(), spec);
+    }
     protected virtual void AttachIfNot(T entity)
     {
         var entry = _context.ChangeTracker.Entries().FirstOrDefault(ent => (T)ent.Entity == entity);

@@ -55,6 +55,13 @@ public static class SpecificationEvaluator<T, TKey> where T:  Entity<TKey>
 
         return query;
     }
+
+    public static IQueryable<TResult> GetResultQuery<TResult>(IQueryable<T> inputQuery, ISpecification<T, TResult> specification)
+        where TResult: class
+    {
+        var query = GetQuery(inputQuery, specification);
+        return query.Select(specification.Selector);
+    }
 }
 
 public static class SpecificationEvaluator<T> where T:  Entity
@@ -62,5 +69,11 @@ public static class SpecificationEvaluator<T> where T:  Entity
     public static IQueryable<T> GetQuery(IQueryable<T> inputQuery, ISpecification<T> specification)
     {
         return SpecificationEvaluator<T, Guid>.GetQuery(inputQuery, specification);
+    }
+    
+    public static IQueryable<TResult> GetResultQuery<TResult>(IQueryable<T> inputQuery, ISpecification<T, TResult> specification)
+        where TResult : class
+    {
+        return SpecificationEvaluator<T, Guid>.GetResultQuery(inputQuery, specification);
     }
 }

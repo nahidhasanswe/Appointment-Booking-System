@@ -2,6 +2,11 @@ using System.Linq.Expressions;
 
 namespace AppointmentBooking.Core.Specifications;
 
+public interface ISpecification<TEntity, TResult> : ISpecification<TEntity>
+{
+    Expression<Func<TEntity, TResult>> Selector { get; }
+}
+
 /// <summary>
 /// Base specification interface for querying entities
 /// </summary>
