@@ -28,6 +28,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Api.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Swagger", "src\Core\AppointmentBooking.Core.Swagger\AppointmentBooking.Core.Swagger.csproj", "{951E9B4E-A65C-458D-84D1-2A9FB73A1872}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Storage.S3", "src\Core\AppointmentBooking.Core.Storage.S3\AppointmentBooking.Core.Storage.S3.csproj", "{4474E0A8-BE24-4906-8397-FB19149F9294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Storage.Blob", "src\Core\AppointmentBooking.Core.Storage.Blob\AppointmentBooking.Core.Storage.Blob.csproj", "{E93622F7-8FDD-4D85-B7A3-A8D80D38B2AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Storage.FileSystem", "src\Core\AppointmentBooking.Core.Storage.FileSystem\AppointmentBooking.Core.Storage.FileSystem.csproj", "{999EFDE9-AD47-49C1-B459-CD7C348811E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +80,18 @@ Global
 		{951E9B4E-A65C-458D-84D1-2A9FB73A1872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{951E9B4E-A65C-458D-84D1-2A9FB73A1872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{951E9B4E-A65C-458D-84D1-2A9FB73A1872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4474E0A8-BE24-4906-8397-FB19149F9294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4474E0A8-BE24-4906-8397-FB19149F9294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4474E0A8-BE24-4906-8397-FB19149F9294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4474E0A8-BE24-4906-8397-FB19149F9294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93622F7-8FDD-4D85-B7A3-A8D80D38B2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93622F7-8FDD-4D85-B7A3-A8D80D38B2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93622F7-8FDD-4D85-B7A3-A8D80D38B2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93622F7-8FDD-4D85-B7A3-A8D80D38B2AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999EFDE9-AD47-49C1-B459-CD7C348811E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999EFDE9-AD47-49C1-B459-CD7C348811E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999EFDE9-AD47-49C1-B459-CD7C348811E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999EFDE9-AD47-49C1-B459-CD7C348811E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DF03D3F7-5068-42A9-8FDF-9B9015A52C9E} = {9A75FCFA-6DC1-4DF3-8168-48CC073E2765}
@@ -88,5 +106,8 @@ Global
 		{7C0BE202-1750-4AFB-A5ED-928370602E9F} = {EA4A61B1-53C9-4D6E-A2A3-D7742BE5EE09}
 		{8D6916E8-5189-43EF-AA00-B7E04853F4DF} = {47CB401A-FD83-48B0-9408-985F9ACA7163}
 		{951E9B4E-A65C-458D-84D1-2A9FB73A1872} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
+		{4474E0A8-BE24-4906-8397-FB19149F9294} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
+		{E93622F7-8FDD-4D85-B7A3-A8D80D38B2AE} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
+		{999EFDE9-AD47-49C1-B459-CD7C348811E2} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
 	EndGlobalSection
 EndGlobal
