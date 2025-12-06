@@ -34,6 +34,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Sto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Storage.FileSystem", "src\Core\AppointmentBooking.Core.Storage.FileSystem\AppointmentBooking.Core.Storage.FileSystem.csproj", "{999EFDE9-AD47-49C1-B459-CD7C348811E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Policy.Permission", "src\Core\AppointmentBooking.Core.Policy.Permission\AppointmentBooking.Core.Policy.Permission.csproj", "{6E4C40AA-60AC-4FE4-903A-C69C0EE78DB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Core.Policy.Permission.EfCore", "src\Core\AppointmentBooking.Core.Policy.Permission.EfCore\AppointmentBooking.Core.Policy.Permission.EfCore.csproj", "{B4471C47-ED67-4426-9586-E2F38DFA7D97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +96,14 @@ Global
 		{999EFDE9-AD47-49C1-B459-CD7C348811E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{999EFDE9-AD47-49C1-B459-CD7C348811E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{999EFDE9-AD47-49C1-B459-CD7C348811E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4C40AA-60AC-4FE4-903A-C69C0EE78DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4C40AA-60AC-4FE4-903A-C69C0EE78DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4C40AA-60AC-4FE4-903A-C69C0EE78DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4C40AA-60AC-4FE4-903A-C69C0EE78DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4471C47-ED67-4426-9586-E2F38DFA7D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4471C47-ED67-4426-9586-E2F38DFA7D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4471C47-ED67-4426-9586-E2F38DFA7D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4471C47-ED67-4426-9586-E2F38DFA7D97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DF03D3F7-5068-42A9-8FDF-9B9015A52C9E} = {9A75FCFA-6DC1-4DF3-8168-48CC073E2765}
@@ -109,5 +121,7 @@ Global
 		{4474E0A8-BE24-4906-8397-FB19149F9294} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
 		{E93622F7-8FDD-4D85-B7A3-A8D80D38B2AE} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
 		{999EFDE9-AD47-49C1-B459-CD7C348811E2} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
+		{6E4C40AA-60AC-4FE4-903A-C69C0EE78DB6} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
+		{B4471C47-ED67-4426-9586-E2F38DFA7D97} = {DF03D3F7-5068-42A9-8FDF-9B9015A52C9E}
 	EndGlobalSection
 EndGlobal

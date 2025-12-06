@@ -18,9 +18,21 @@ public class Result
         IsSuccess = isSuccess;
         Error = error;
     }
+    
+    protected Result(bool isSuccess, List<string> errors)
+    {
+        if (isSuccess && !errors.Any())
+            throw new InvalidOperationException("Success result cannot have an error.");
+        if (!isSuccess && !errors.Any())
+            throw new InvalidOperationException("Failure result must have an error.");
+
+        IsSuccess = isSuccess;
+        Error = string.Join(". ", errors);
+    }
 
     public static Result Success() => new(true, string.Empty);
     public static Result Failure(string error) => new(false, error);
+    public static Result Failure(List<string> errors) => new(false, errors);
     public static Result<T> Success<T>(T value) => new(value, true, string.Empty);
     public static Result<T> Failure<T>(string error) => new(default!, false, error);
     
